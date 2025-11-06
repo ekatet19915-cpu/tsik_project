@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.study.client.controller.DashboardController"
+            styleClass="root">
+
+    <!-- ВЕРХНЯЯ ПАНЕЛЬ -->
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="15" style="-fx-background-color: #2c3e50; -fx-padding: 15;">
+            <ImageView fitHeight="40" fitWidth="40">
+                <image><Image url="@/images/logo.png"/></image>
+            </ImageView>
+            <Label text="COLLABORATIVE STUDY PLATFORM"
+                   style="-fx-text-fill: white; -fx-font-size: 18; -fx-font-weight: bold;"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Label fx:id="userLabel" style="-fx-text-fill: #ecf0f1;"/>
+            <Button text="Odhlásiť sa" styleClass="btn-warning"/>
+        </HBox>
+    </top>
+
+    <!-- ЛЕВОЕ МЕНЮ -->
+    <left>
+        <VBox spacing="15" styleClass="sidebar" style="-fx-padding: 20;">
+            <Button text="Môj profil" styleClass="sidebar-button">
+                <graphic>
+                    <ImageView fitHeight="24" fitWidth="24">
+                        <image><Image url="@/images/user.png"/></image>
+                    </ImageView>
+                </graphic>
+            </Button>
+            <Button text="Moje skupiny" styleClass="sidebar-button">
+                <graphic>
+                    <ImageView fitHeight="24" fitWidth="24">
+                        <image><Image url="@/images/group.png"/></image>
+                    </ImageView>
+                </graphic>
+            </Button>
+            <Button text="Úlohy" styleClass="sidebar-button">
+                <graphic>
+                    <ImageView fitHeight="24" fitWidth="24">
+                        <image><Image url="@/images/task.png"/></image>
+                    </ImageView>
+                </graphic>
+            </Button>
+        </VBox>
+    </left>
+
+    <!-- ЦЕНТР — КАРТИНКА КОМАНДЫ + ТЕКСТ -->
+    <center>
+        <VBox spacing="30" alignment="CENTER" style="-fx-padding: 50;">
+            <ImageView fitHeight="250" fitWidth="350">
+                <image><Image url="@/images/team.png"/></image>
+            </ImageView>
+            <Label text="Tímy a spolupráca" styleClass="title"/>
+            <Label text="Študenti môžu pracovať individuálne alebo v tíme dvoch osôb."
+                   style="-fx-text-fill: #7f8c8d; -fx-font-size: 16; -fx-text-alignment: center; -fx-wrap-text: true;"
+                   prefWidth="500"/>
+        </VBox>
+    </center>
+</BorderPane>
