@@ -24,7 +24,14 @@ public class User {
   @Enumerated(EnumType.STRING)
   @Column(nullable = false, length = 20)
   private Role role = Role.USER;
-
   @Column(nullable = false, updatable = false)
-  private Instant createdAt = Instant.now();
+  private Instant createdAt;
+
+  @PrePersist
+  protected void onCreate() {
+    if (createdAt == null) {
+      createdAt = Instant.now();
+    }
+  }
+
 }

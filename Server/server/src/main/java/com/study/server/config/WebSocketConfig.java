@@ -1,6 +1,5 @@
 package com.study.server.config;
 
-
 import org.springframework.context.annotation.Configuration;
 import org.springframework.messaging.simp.config.MessageBrokerRegistry;
 import org.springframework.web.socket.config.annotation.*;
@@ -11,13 +10,18 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
 
     @Override
     public void configureMessageBroker(MessageBrokerRegistry config) {
-        config.enableSimpleBroker("/topic"); // Подписки: /topic/...
-        config.setApplicationDestinationPrefixes("/app"); // Отправка: /app/...
+        // Каналы, куда сервер шлёт сообщения
+        config.enableSimpleBroker("/topic/group", "/topic/user");
+        // Префикс для сообщений от клиента
+        config.setApplicationDestinationPrefixes("/app");
+        // Префикс для личных сообщений
+        config.setUserDestinationPrefix("/user");
     }
 
     @Override
     public void registerStompEndpoints(StompEndpointRegistry registry) {
-        registry.addEndpoint("/ws") // Подключение: ws://localhost:8080/ws
-                .withSockJS(); // Поддержка старых браузеров (и JavaFX)
+        registry.addEndpoint("/ws")
+                .setAllowedOriginPatterns("*")
+                .withSockJS();
     }
 }
