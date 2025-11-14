@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<TitledPane expanded="true" text="Skupina: Java Štúdiumfd" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1"
+            stylesheets="@/css/style.css" styleClass="card">
+
+    <GridPane hgap="20" vgap="15" styleClass="card">
+
+        <!-- Участники -->
+        <Label styleClass="title" text="Členovia tímu:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+        <ListView fx:id="membersList" prefHeight="120" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+
+        <!-- Чат -->
+        <Label styleClass="title" text="Skupinový chat:" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+        <ListView fx:id="chatList" prefHeight="200" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+        <TextField promptText="Napísať správu..." GridPane.columnIndex="1" GridPane.rowIndex="2" styleClass="text-field"/>
+        <Button text="Odoslať" GridPane.columnIndex="1" GridPane.rowIndex="3" styleClass="btn-primary"/>
+
+        <!-- Материалы -->
+        <Label styleClass="title" text="Zdieľané materiály:" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="4" />
+        <ListView fx:id="resourcesList" prefHeight="150" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="5" />
+        <Button text="Pridať materiál" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="6" styleClass="btn-success"/>
+
+        <columnConstraints>
+            <ColumnConstraints />
+            <ColumnConstraints />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+        </rowConstraints>
+    </GridPane>
+</TitledPane>

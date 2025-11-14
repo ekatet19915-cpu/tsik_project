@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.study.client.controller.DashboardController"
+            stylesheets="@/css/style.css"
+            styleClass="root">
+
+    <!-- ВЕРХНЯЯ ПАНЕЛЬ -->
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="15" styleClass="card" style="-fx-padding: 15;">
+            <ImageView fitHeight="40" fitWidth="40">
+                <image><Image url="@/images/logo.png"/></image>
+            </ImageView>
+            <Label text="COLLABORATIVE STUDY PLATFORM" styleClass="title"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Label fx:id="userLabel" styleClass="text-field"/>
+            <Button text="Odhlásiť sa" styleClass="btn-primary"/>
+        </HBox>
+    </top>
+
+    <!-- ЛЕВОЕ МЕНЮ -->
+    <left>
+        <VBox spacing="15" styleClass="sidebar">
+            <Button text="Môj profil" styleClass="sidebar-button">
+                <graphic>
+                    <ImageView fitHeight="24" fitWidth="24">
+                        <image><Image url="@/images/user.png"/></image>
+                    </ImageView>
+                </graphic>
+            </Button>
+            <Button text="Moje skupiny" styleClass="sidebar-button">
+                <graphic>
