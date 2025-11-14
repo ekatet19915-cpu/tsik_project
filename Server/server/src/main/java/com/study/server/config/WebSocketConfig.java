@@ -10,18 +10,18 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
 
     @Override
     public void configureMessageBroker(MessageBrokerRegistry config) {
-        // Каналы, куда сервер шлёт сообщения
-        config.enableSimpleBroker("/topic/group", "/topic/user");
-        // Префикс для сообщений от клиента
+        // Сервер может посылать на /topic и /queue
+        config.enableSimpleBroker("/topic", "/queue");
+        // Клиенты отправляют на /app/...
         config.setApplicationDestinationPrefixes("/app");
-        // Префикс для личных сообщений
+        // Для личных уведомлений через convertAndSendToUser(...)
         config.setUserDestinationPrefix("/user");
     }
 
     @Override
     public void registerStompEndpoints(StompEndpointRegistry registry) {
         registry.addEndpoint("/ws")
-                .setAllowedOriginPatterns("*")
+                .setAllowedOriginPatterns("http://127.0.0.1:5500", "http://localhost:5500")
                 .withSockJS();
     }
 }

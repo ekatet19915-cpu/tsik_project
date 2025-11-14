@@ -12,5 +12,7 @@ public class WebSocketMessage {
     private Long groupId;
     private Long userId;
     private String username;
-    private Object data;     // Дополнительные данные
+    private Object data;
+    // Дополнительные данные
 }
+

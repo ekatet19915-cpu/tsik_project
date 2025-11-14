@@ -1,29 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Separator?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.VBox?>
+<HBox xmlns="http://javafx.com/javafx/25"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.study.client.controller.TasksController"
+      stylesheets="@/css/style.css"
+      spacing="20" styleClass="root"
+      alignment="TOP_CENTER" >
 
-<AnchorPane style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.study.client.controller.TasksController">
-
-    <!-- ЛЕВАЯ ЧАСТЬ — ТЕКСТ -->
-    <VBox alignment="CENTER_LEFT" prefWidth="500" spacing="20" AnchorPane.bottomAnchor="100" AnchorPane.leftAnchor="100" AnchorPane.topAnchor="150">
-
-        <Label style="-fx-font-size: 36; -fx-font-weight: bold; -fx-text-fill: #2c3e50;" styleClass="title-label" text="COLLABORATIVE STUDY PLATFORM" />
-
-        <Separator prefHeight="4" prefWidth="60" style="-fx-background-color: #3498db;" />
-
-        <Label style="-fx-font-size: 18; -fx-text-fill: #7f8c8d; -fx-underline: true;" styleClass="subtitle-label" text="SEMESTERIAL WORK" />
+    <!-- OPEN -->
+    <VBox spacing="10" styleClass="card" prefWidth="250">
+        <Label text="OPEN" styleClass="title"/>
+        <ListView fx:id="openTasksList" prefHeight="400" />
+        <Button text="Pridať úlohu" styleClass="btn-success"/>
     </VBox>
 
-    <!-- ПРАВАЯ ЧАСТЬ — КАРТИНКА (стопка книг) -->
-    <ImageView fitHeight="400" fitWidth="300" preserveRatio="true" AnchorPane.rightAnchor="100" AnchorPane.topAnchor="120">
-        <image>
-            <Image url="@/images/logo.png" />
-        </image>
-    </ImageView>
+    <!-- IN_PROGRESS -->
+    <VBox spacing="10" styleClass="card" prefWidth="250">
+        <Label text="IN_PROGRESS" styleClass="title"/>
+        <ListView fx:id="inProgressTasksList" prefHeight="400" />
+    </VBox>
 
-</AnchorPane>
+    <!-- DONE -->
+    <VBox spacing="10" styleClass="card" prefWidth="250">
+        <Label text="DONE" styleClass="title"/>
+        <ListView fx:id="doneTasksList" prefHeight="400" />
+    </VBox>
+</HBox>

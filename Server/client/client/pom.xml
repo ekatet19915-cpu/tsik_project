@@ -19,6 +19,7 @@
     <properties>
         <java.version>21</java.version>
         <javafx.version>21</javafx.version>
+        <jackson.version>2.16.2</jackson.version>
     </properties>
 
     <dependencies>
@@ -46,10 +47,21 @@
             <version>1.1.2</version>
         </dependency>
 
-        <!-- JSON -->
+        <!-- Jackson для JSON -->
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
+            <version>${jackson.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>${jackson.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+            <version>${jackson.version}</version>
         </dependency>
     </dependencies>
 
